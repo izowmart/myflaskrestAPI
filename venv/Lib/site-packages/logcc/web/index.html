@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>logcc monitor</title>
+    <link href="/css_clusterize" rel="stylesheet">
+    <script src="/js_clusterize"></script>
+</head>
+<body>
+
+<div id="scrollArea" class="clusterize-scroll">
+
+    <ol id="contentArea" class="clusterize-content" >
+        <li class="clusterize-no-data">Loading data…</li>
+    </ol>
+</div>
+
+
+<script>
+    var data = [];
+    var clusterize = new Clusterize({
+        rows: data,
+        scrollId: 'scrollArea',
+        contentId: 'contentArea'
+    });
+    var ws = new WebSocket("ws://127.0.0.1:8989/")
+    ws.onmessage = function (event) {
+        data.push('<li style="margin-left:10rem">' + event.data + '</li>')
+    };
+
+    var last_height = 0;
+
+    setInterval(function () {
+        clusterize.update(data)
+        content = document.getElementById('contentArea')
+        height = content.offsetHeight
+        if (height > last_height) {
+            scroll = document.getElementById('scrollArea')
+            scroll.scrollTo(0, height)
+            last_height = height
+        }
+    }, 100);
+</script>
+</body>
+</html>

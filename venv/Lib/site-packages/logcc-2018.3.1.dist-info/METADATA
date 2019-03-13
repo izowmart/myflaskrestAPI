@@ -1,0 +1,52 @@
+Metadata-Version: 2.0
+Name: logcc
+Version: 2018.3.1
+Summary: log with colors
+Home-page: https://github.com/pingf/logcc.git
+Author: Jesse MENG
+Author-email: pingf0@gmail.com
+License: BSD
+Platform: any
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: termcc
+Requires-Dist: loader
+Requires-Dist: aiohttp
+Requires-Dist: aiofiles
+Requires-Dist: websockets
+Requires-Dist: pony
+Requires-Dist: terminaltables
+
+=============================
+logcc
+=============================
+
+simple & beautiful log setup library
+
+**Note**: this package is still in alpha. Use with caution !
+
+
+Quickstart
+----------
+
+Install logcc::
+
+    pip install logcc
+
+
+Use logcc:
+
+.. code-block:: python
+
+    l = LogCC(name='test)
+    l.update_color_formatter('name', 'DEBUG', red())
+    l.update_color_formatter('name', 'INFO', cc(':blue::man::red::woman:'))
+    log = logging.getLogger(name)
+    log.debug('你好，世界')
+    log.info('hello world')
+
+
+

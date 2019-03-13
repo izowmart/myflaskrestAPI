@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: termcc
+Version: 2018.11.2
+Summary: give you some color to see see(chinese idiom) in terminal
+Home-page: https://github.com/pingf/termcc.git
+Author: dameng
+Author-email: pingf0@gmail.com
+License: BSD
+Platform: any
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+
+
+termcc
+-------------
+
+This is the description for that library
+
+
